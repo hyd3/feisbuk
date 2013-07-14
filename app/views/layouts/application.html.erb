@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<p>
+		<%= link_to "Feed", feed_path %>
+	</p>
 	<div id="nav">
 		<% if user_signed_in? %>
 			<%= link_to current_user.full_name, edit_user_registration_path %>

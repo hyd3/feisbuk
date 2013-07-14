@@ -1,8 +1,12 @@
 Feisbuk::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'entrar', :sign_out => 'salir', :password => 'recuperar_password', :confirmation => 'verificar', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'cmon_let_me_in' }
 
+  
   resources :statuses
+  get 'feed', to: 'statuses#index', as: :feed
   root to: 'statuses#index'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
